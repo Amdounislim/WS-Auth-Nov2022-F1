@@ -2,9 +2,15 @@ require('dotenv').config()
 const express = require('express')
 const connectDB = require('./config/connectDB')
 const user = require('./routes/user')
+const passport = require('passport')
+const cors = require('cors')
 
 
 const app = express()
+
+app.use(cors())
+
+// app.use(passport.initialize());
 
 app.use(express.json())
 
